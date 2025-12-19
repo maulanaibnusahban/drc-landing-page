@@ -1,0 +1,47 @@
+@import "tailwindcss";
+
+@theme inline {
+  --font-poppins: "Poppins", sans-serif;
+  --font-plus-jakarta-sans: "Plus Jakarta Sans", sans-serif;
+  --spacing-8xl: 1580px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@keyframes revealDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.animate-reveal {
+  animation: revealDown 0.8s cubic-bezier(0.77, 0, 0.175, 1) forwards;
+  animation-delay: 0.2s;
+  opacity: 0;
+}
+
+/* Swiper Pagination Custom */
+.swiper-pagination-custom {
+  position: static !important;
+  margin-top: 2rem;
+}
+
+.swiper-pagination-custom .swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
+  background-color: #cbd5e1; /* slate-300 */
+  opacity: 1;
+  transition: all 0.3s ease;
+}
+
+.swiper-pagination-custom .swiper-pagination-bullet-active {
+  width: 30px;
+  background-color: #00c4ff;
+  border-radius: 999px;
+}
