@@ -11,18 +11,26 @@ function App() {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsLoading(false);
-    }, 1500);
+    const minTimer = new Promise((resolve) => setTimeout(resolve, 1200));
 
-    return () => clearTimeout(timer);
+    const windowLoad = new Promise((resolve) => {
+      if (document.readyState === "complete") {
+        resolve();
+      } else {
+        window.addEventListener("load", resolve, { once: true });
+      }
+    });
+
+    Promise.all([minTimer, windowLoad]).then(() => {
+      setIsLoading(false);
+    });
   }, []);
 
   return (
     <main className="min-h-screen flex flex-col items-center w-full relative">
       <Preloader isLoading={isLoading} />
       <Navbar />
-      <Home />
+      <Home isLoading={isLoading} />
       <About />
       <Division />
       <Activities />

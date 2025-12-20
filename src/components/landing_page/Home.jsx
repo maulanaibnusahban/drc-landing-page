@@ -2,8 +2,25 @@ import BackgroundHero from "../ui/BackgroundHero";
 import { PointHero } from "../ui/PointHero";
 import { FaChevronRight } from "react-icons/fa";
 import { point_home } from "../../lib";
+import { motion } from "motion/react";
 
-export default function Home() {
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.2,
+      delayChildren: 0.1,
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+};
+
+export default function Home({ isLoading }) {
   return (
     <main
       className="w-full flex flex-wrap justify-center relative min-h-screen bg-black items-center overflow-hidden pt-20 lg:pt-32 2xl:pt-5"
@@ -13,30 +30,47 @@ export default function Home() {
         <div className="bg-[#f9f9f9] min-w-screen min-h-screen w-full h-full block xl:hidden"></div>
         <BackgroundHero />
       </div>
-      <div className="z-10 flex relative flex-col items-center lg:max-w-[730px] 2xl:max-w-[740px] w-full min-w-8 font-plus-jakarta-sans text-center gap-6 lg:gap-7 mb-20 2xl:mb-0">
-        <p className="font-bold lg:text-2xl bg-[linear-gradient(90deg,#00C4FF_0%,#5A94FF_100%)] bg-clip-text text-transparent">
+      <motion.div
+        variants={containerVariants}
+        initial="hidden"
+        animate={!isLoading ? "visible" : "hidden"}
+        className="z-10 flex relative flex-col items-center lg:max-w-[730px] 2xl:max-w-[740px] w-full min-w-8 font-plus-jakarta-sans text-center gap-6 lg:gap-7 mb-20 2xl:mb-0"
+      >
+        <motion.p
+          variants={itemVariants}
+          className="font-bold lg:text-2xl bg-[linear-gradient(90deg,#00C4FF_0%,#5A94FF_100%)] bg-clip-text text-transparent"
+        >
           Dinus Robotic Club
-        </p>
-        <h1 className="font-extrabold px-4 lg:px-0 text-4xl lg:text-[70px] 2xl:text-[75px] tracking-[-1.6px] font-plus-jakarta-sans lg:leading-22 w-full">
+        </motion.p>
+        <motion.h1
+          variants={itemVariants}
+          className="font-extrabold px-4 lg:px-0 text-4xl lg:text-[70px] 2xl:text-[75px] tracking-[-1.6px] font-plus-jakarta-sans lg:leading-22 w-full"
+        >
           Wadah Inovasi dan Pengembangan{" "}
           <span className="bg-[linear-gradient(90deg,#00C4FF_0%,#5A94FF_100%)] bg-clip-text text-transparent">
             Teknologi Robotika.
           </span>
-        </h1>
-        <p className="max-w-[700px] font-normal px-4 lg:px-0 text-sm lg:text-2xl text-center w-full ">
+        </motion.h1>
+        <motion.p
+          variants={itemVariants}
+          className="max-w-[700px] font-normal px-4 lg:px-0 text-sm lg:text-2xl text-center w-full "
+        >
           Tempat untuk memberikan wadah beksperimen tanpa batas di bidang robotika, menghubungkan mahasiswa dengan teknologi masa
           depan.
-        </p>
-        <a
+        </motion.p>
+        <motion.a
           href="#about"
+          variants={itemVariants}
           className="py-3 px-8 lg:px-12 lg:py-4 items-center flex rounded-full bg-[linear-gradient(90deg,#00C4FF_0%,#5A94FF_100%)] font-bold text-sm lg:text-xl text-white gap-2.5 hover:bg-[linear-gradient(15deg,#5A94FF_5%,#00C4FF_100%)] transition-all duration-500 active:scale-95 cursor-pointer"
         >
           Tentang DRC <FaChevronRight className="h-3 w-3 lg:h-4 lg:w-4" />
-        </a>
-      </div>
+        </motion.a>
+      </motion.div>
       {point_home.map((point, index) => (
         <PointHero
           key={index}
+          index={index}
+          isLoading={isLoading}
           background={point.background}
           text={point.text}
           border={point.border}

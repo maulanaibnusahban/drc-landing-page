@@ -13,6 +13,7 @@
     "@fontsource/plus-jakarta-sans": "^5.2.8",
     "@fontsource/poppins": "^5.2.7",
     "@tailwindcss/vite": "^4.1.18",
+    "motion": "^12.23.26",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-icons": "^5.5.0",
