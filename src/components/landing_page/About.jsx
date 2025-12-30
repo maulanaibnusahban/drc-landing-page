@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
-const images = ["/image2.jpg", "/image1.jpg", "/image3.jpg"];
+const images = ["/image2.webp", "/image1.webp", "/image3.webp", "/image4.webp", "/image5.webp"];
 
 function About() {
   const [currentSlide, setCurrentSlide] = useState(0);

@@ -44,7 +44,7 @@ export default function Home({ isLoading }) {
         </motion.p>
         <motion.h1
           variants={itemVariants}
-          className="font-extrabold px-4 lg:px-0 text-4xl lg:text-[70px] 2xl:text-[75px] tracking-[-1.6px] font-plus-jakarta-sans lg:leading-22 w-full"
+          className="font-extrabold px-4 lg:px-0 text-4xl md:text-5xl lg:text-[70px] 2xl:text-[75px] tracking-[-1.6px] font-plus-jakarta-sans lg:leading-22 w-full"
         >
           Wadah Inovasi dan Pengembangan{" "}
           <span className="bg-[linear-gradient(90deg,#00C4FF_0%,#5A94FF_100%)] bg-clip-text text-transparent">

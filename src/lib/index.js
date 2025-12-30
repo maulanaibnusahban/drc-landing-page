@@ -44,29 +44,40 @@ export const activities_list = [
     title: "Pelatihan Robotika",
     description:
       "Pelatihan intensif yang mencakup pengenalan mendalam komponen elektronika dasar serta praktik pemrograman Arduino, dirancang untuk membangun fondasi teknis dan logika pemrograman bagi seluruh anggota komunitas.",
-    image: "/image1.jpg",
+    image: "/image1.webp",
     date: "Mingguan",
   },
   {
     title: "Kunjungan Sekolah",
     description:
       "Program interaksi edukatif dengan siswa SMK, bertujuan memperkenalkan dan mengajarkan dunia robotika secara praktis sekaligus menginspirasi pelajar untuk melakukan eksplorasi potensi teknologi di masa depan.",
-    image: "/image2.jpg",
+    image: "/image2.webp",
     date: "November 2025",
   },
   {
     title: "Ikut Serta Kompetisi",
     description:
       "Representasi aktif UKM DRC dalam berbagai ajang perlombaan robotika eksternal dan tingkat nasional guna mengasah kompetensi, memperluas relasi, serta meraih prestasi membanggakan di luar lingkungan kampus.",
-    image: "/image4.jpg",
+    image: "/image4.webp",
     date: "Mei 2025",
   },
   {
     title: "Kompetisi DN ROBOCO",
     description:
       "Penyelenggaraan turnamen robotika tahunan yang inklusif bagi berbagai kalangan, mulai dari pelajar hingga praktisi, sebagai wadah kompetisi sehat dan pertukaran inovasi teknologi robotika terkini.",
-    image: "/image5.jpg",
+    image: "/image5.webp",
     date: "Januari 2025",
+  },
+];
+
+export const onGoingActivities = [
+  {
+    title: "DN ROBOCO 2026",
+    description:
+      "Turnamen robotika tahunan bagi berbagai kalangan, mulai dari pelajar hingga praktisi, sebagai wadah kompetisi sehat dan pertukaran inovasi teknologi robotika terkini.",
+    image: "/dn-roboco-poster.svg",
+    date: "20 Januari 2026",
+    link: "dnroboco.dinusrobotic.org",
   },
 ];
 

@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
-import { activities_list } from "../../lib";
+import { activities_list, onGoingActivities } from "../../lib";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
@@ -136,6 +136,48 @@ function Activities() {
 
           <div className="swiper-pagination-custom flex justify-center gap-2 mt-8"></div>
         </Swiper>
+      </div>
+      <div className="mt-20 text-center mb-12 px-4 space-y-4">
+        <h2 className="text-3xl md:text-5xl font-bold font-poppins text-gray-900">
+          Kegiatan <span className="text-[#00C4FF]">Mendatang</span>
+        </h2>
+        <p className="text-gray-600 lg:text-lg font-plus-jakarta-sans max-w-3xl mx-auto">
+          Jangan lewatkan agenda kegiatan seru yang akan datang!
+        </p>
+      </div>
+
+      <div className="w-full px-4 lg:px-0 py-10">
+        <div className="flex flex-col items-center gap-10 w-full max-w-7xl mx-auto">
+          {onGoingActivities.map((item, index) => (
+            <div
+              key={index}
+              onClick={() => item.link && window.open(`https://${item.link}`, "_blank")}
+              className="relative w-full max-w-[90vw] md:max-w-2xl lg:max-w-[900px] xl:max-w-5xl rounded-2xl overflow-hidden shadow-2xl hover:shadow-blue-200/50 transition-all duration-500 border border-gray-100 flex flex-col lg:flex-row group items-stretch cursor-pointer bg-white"
+            >
+              {/* Image Side */}
+              <div className="w-full lg:w-5/12 h-64 md:h-80 lg:h-auto lg:min-h-full relative overflow-hidden shrink-0">
+                <img
+                  src={item.image}
+                  alt={item.title}
+                  className="w-full h-full object-cover absolute inset-0 transition-transform duration-700 group-hover:scale-110"
+                />
+                <div className="absolute top-4 left-4 bg-white/95 backdrop-blur-md px-4 py-1.5 rounded-full text-sm font-bold text-[#00C4FF] font-plus-jakarta-sans shadow-lg z-10">
+                  {item.date}
+                </div>
+              </div>
+
+              <div className="w-full lg:w-7/12 p-6 lg:p-10 flex flex-col justify-center font-plus-jakarta-sans relative overflow-hidden bg-white">
+                <h3 className="text-xl lg:text-3xl font-bold font-poppins text-gray-900 mb-4 group-hover:text-[#00C4FF] transition-colors relative z-10 line-clamp-1">
+                  {item.title}
+                </h3>
+                <p className="text-gray-600 leading-relaxed lg:text-lg relative z-10 line-clamp-4">{item.description}</p>
+                <p className="text-gray-600 leading-relaxed lg:text-lg relative z-10 line-clamp-1 mt-3 underline font-medium">
+                  Lihat selengkapnya &rarr;
+                </p>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );
