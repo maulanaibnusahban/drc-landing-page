@@ -68,7 +68,7 @@ function Footer() {
                   <FaEnvelope className="w-5 h-5 mt-1 text-gray-600]" />
                   <div>
                     <p className="font-semibold text-gray-900">{contact.email}</p>
-                    <p className="text-sm">Kirim pesan kapanpun!</p>
+                    <p className="text-sm">DRC Official</p>
                   </div>
                 </div>
               </div>

@@ -92,20 +92,20 @@ function Navbar() {
         }`}
       >
         <img src="/logo_drc.svg" className="w-[30%]" alt="Logo DRC" width={55} height={55} />
-        <div className="flex flex-col items-start px-6 w-full">
+        <div className="flex flex-col items-start px-6 gap-3 w-full">
           {nav_menu.map((menu, index) => (
             <a
               key={index}
               href={menu.href}
-              className={`text-lg py-3 block w-full transition-all duration-150 relative group ${
+              className={`text-lg py-2 block w-full hover:text-[#00C4FF] transition-all duration-150 relative group ${
                 activeLink === menu.href ? "text-[#00C4FF] font-medium" : "text-black"
               }`}
               onClick={handleClose}
             >
               {menu.name}
               <span
-                className={`absolute left-0 bottom-2 h-[2px] bg-[#00C4FF] transition-all duration-300 ease-in-out ${
-                  activeLink === menu.href ? "w-20" : "w-0"
+                className={`absolute left-0 bottom-0 h-[3px] bg-[#00C4FF] transition-all duration-300 ease-in-out ${
+                  activeLink === menu.href ? "w-full" : "w-0 group-hover:w-full"
                 }`}
               ></span>
             </a>

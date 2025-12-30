@@ -24,8 +24,7 @@ export const division_list = [
   },
   {
     title: "Robotic Intelligence",
-    description:
-      "Mengembangkan algoritma cerdas, computer vision, dan AI untuk membuat robot dapat berpikir dan mengambil keputusan.",
+    description: "Mengembangkan algoritma cerdas, dan AI untuk membuat robot dapat berpikir dan mengambil keputusan.",
     icon: "intelligence",
     color: "from-[#E2B2FF] to-[#6A00FF]",
     border: "#E2B2FF",
@@ -58,16 +57,16 @@ export const activities_list = [
   {
     title: "Ikut Serta Kompetisi",
     description:
-      "Representasi aktif UKM DRDC dalam berbagai ajang perlombaan robotika eksternal dan tingkat nasional guna mengasah kompetensi, memperluas relasi, serta meraih prestasi membanggakan di luar lingkungan kampus.",
-    image: "/image3.jpg",
-    date: "Mei 2024",
+      "Representasi aktif UKM DRC dalam berbagai ajang perlombaan robotika eksternal dan tingkat nasional guna mengasah kompetensi, memperluas relasi, serta meraih prestasi membanggakan di luar lingkungan kampus.",
+    image: "/image4.jpg",
+    date: "Mei 2025",
   },
   {
-    title: "Komptisi DN ROBOCO",
+    title: "Kompetisi DN ROBOCO",
     description:
       "Penyelenggaraan turnamen robotika tahunan yang inklusif bagi berbagai kalangan, mulai dari pelajar hingga praktisi, sebagai wadah kompetisi sehat dan pertukaran inovasi teknologi robotika terkini.",
-    image: "/image1.jpg",
-    date: "Januari 2026",
+    image: "/image5.jpg",
+    date: "Januari 2025",
   },
 ];
 
