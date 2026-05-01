@@ -151,7 +151,11 @@ function Activities() {
           {onGoingActivities.map((item, index) => (
             <div
               key={index}
-              onClick={() => item.link && window.open(`https://${item.link}`, "_blank")}
+              onClick={() => {
+                if (!item.link) return;
+                const url = item.link.startsWith("http") ? item.link : `https://${item.link}`;
+                window.open(url, "_blank");
+              }}
               className="relative w-full max-w-[90vw] md:max-w-2xl lg:max-w-[900px] xl:max-w-5xl rounded-2xl overflow-hidden shadow-2xl hover:shadow-blue-200/50 transition-all duration-500 border border-gray-100 flex flex-col lg:flex-row group items-stretch cursor-pointer bg-white"
             >
               {/* Image Side */}
@@ -170,9 +174,11 @@ function Activities() {
                 <h3 className="text-xl lg:text-3xl font-bold font-poppins text-gray-900 mb-4 group-hover:text-[#00C4FF] transition-colors relative z-10 line-clamp-1">
                   {item.title}
                 </h3>
-                <p className="text-gray-600 leading-relaxed lg:text-lg relative z-10 line-clamp-4">{item.description}</p>
+                <p className="text-gray-600 leading-relaxed lg:text-lg relative z-10 line-clamp-4">
+                  {item.description}
+                </p>
                 <p className="text-gray-600 leading-relaxed lg:text-lg relative z-10 line-clamp-1 mt-3 underline font-medium">
-                  Lihat selengkapnya &rarr;
+                  Daftar Sekarang &rarr;
                 </p>
               </div>
             </div>
